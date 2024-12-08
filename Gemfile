@@ -30,6 +30,8 @@ gem "solid_cable"
 
 gem "bcrypt"
 
+gem "kaminari"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

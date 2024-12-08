@@ -43,6 +43,10 @@ h1 {
     outline: none;
 }
 
+.ask-table th a {
+    color: white !important;
+}
+
 .form-submit {
     background-color: #5cb85c;
     color: white;
@@ -522,4 +526,20 @@ body {
 
 .task-title:hover {
     text-decoration: underline;
+}
+
+.task-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-title {
+    max-width: 150px;
+}
+
+.task-table td:nth-child(2),
+.task-table td:nth-child(4),
+.task-table td:nth-child(5) {
+    max-width: 100px;
 }

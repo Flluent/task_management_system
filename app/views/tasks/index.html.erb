@@ -6,24 +6,54 @@
 <table class="task-table">
   <thead>
   <tr>
-    <th>Заголовок</th>
-    <th>Автор</th>
-    <th>Статус</th>
-    <th>Описание</th>
-    <th>Категория</th>
-    <th>Приоритет</th>
+    <th>
+      <%= link_to 'Заголовок', tasks_path(sort: 'title', direction: sort_direction('title')), style: 'color: white;' %>
+      <% if params[:sort] == 'title' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to 'Автор', tasks_path(sort: 'user_id', direction: sort_direction('user_id')), style: 'color: white;' %>
+      <% if params[:sort] == 'user_id' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to 'Статус', tasks_path(sort: 'status', direction: sort_direction('status')), style: 'color: white;' %>
+      <% if params[:sort] == 'status' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to 'Описание', tasks_path(sort: 'description', direction: sort_direction('description')), style: 'color: white;' %>
+      <% if params[:sort] == 'description' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to 'Категория', tasks_path(sort: 'category', direction: sort_direction('category')), style: 'color: white;' %>
+      <% if params[:sort] == 'category' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to 'Приоритет', tasks_path(sort: 'priority', direction: sort_direction('priority')), style: 'color: white;' %>
+      <% if params[:sort] == 'priority' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
     <th>Действия</th>
   </tr>
   </thead>
   <tbody>
   <% @tasks.each do |task| %>
     <tr>
-      <td><%= link_to task.title, task, class: 'task-title' %></td>
+      <td class="task-title"><%= link_to task.title, task, class: 'task-title' %></td>
       <td><%= task.user.username if task.user %></td>
       <td><%= task.display_status %></td>
-      <td><%= task.description %></td>
-      <td><%= task.category %></td>
-      <td><%= task.display_priority %></td>
+      <td class="description"><%= task.description %></td>
+      <td class="category"><%= task.category %></td>
+      <td class="priority"><%= task.display_priority %></td>
       <td>
         <div class="task-actions">
           <%= link_to 'Редактировать', edit_task_path(task), class: 'btn btn-secondary' %>
@@ -34,3 +64,7 @@
   <% end %>
   </tbody>
 </table>
+
+<div class="pagination">
+  <%= paginate @tasks %>
+</div>

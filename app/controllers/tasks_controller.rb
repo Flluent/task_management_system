@@ -4,6 +4,16 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+
+    # Сортировка по параметрам с безопасной белым списком
+    valid_sort_columns = %w[title user_id status description category priority]
+    sort_column = valid_sort_columns.include?(params[:sort]) ? params[:sort] : "created_at"
+    sort_direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+
+    @tasks = @tasks.order(sort_column => sort_direction)
+
+    # Пагинация
+    @tasks = @tasks.page(params[:page]).per(6)
   end
 
   def show
@@ -19,7 +29,8 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path, notice: "Задача успешно создана!"
     else
-      render :new
+      flash[:alert] = "Что-то пошло не так: ".concat(@task.errors.full_messages.to_sentence)
+      redirect_to tasks_new_path
     end
   end
 
@@ -43,6 +54,14 @@ class TasksController < ApplicationController
 
   def set_task
     @task = Task.find(params[:id])
+  end
+
+  def sort_direction(column)
+    if column == params[:sort]
+      params[:direction] == "asc" ? "desc" : "asc"
+    else
+      "asc"
+    end
   end
 
   def task_params
