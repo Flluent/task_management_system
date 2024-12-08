@@ -36,9 +36,11 @@ RSpec.describe UsersController, type: :controller do
         }.to change(User, :count).by(0)
       end
 
-      it "renders the new template" do
-        post :create, params: { user: { username: "", password: "password", password_confirmation: "password" } }
-        expect(response).to render_template(:new)
+      it 'redirects to the signup page' do
+        post :create, params: { user: { username: "", password: "", password_confirmation: "" } }
+        expect(response).to redirect_to(signup_path)
+
+        expect(flash[:alert]).to include("Ошибка при регистрации")
       end
     end
   end
