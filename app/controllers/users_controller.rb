@@ -6,9 +6,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: 'Вы успешно зарегистрировались!'
+      flash[:notice] = 'Вы успешно зарегистрировались!'
+      redirect_to root_path
     else
-      render :new
+      flash[:alert] = 'Ошибка при регистрации. Пожалуйста, попробуйте снова : '.concat(@user.errors.full_messages.to_sentence)
+      redirect_to signup_path
     end
   end
 

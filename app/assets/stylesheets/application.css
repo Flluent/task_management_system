@@ -50,3 +50,46 @@ h1 {
 .form-submit:hover {
     background-color: #4cae4c;
 }
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+nav {
+    background-color: #f8f9fa; /* Цвет фона */
+    padding: 10px; /* Отступы */
+}
+
+nav ul {
+    list-style-type: none; /* Убираем маркеры */
+    padding: 0; /* Убираем отступы */
+}
+
+nav li {
+    display: inline; /* Горизонтальное расположение */
+    margin-right: 15px; /* Отступы между элементами */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #007bff; /* Цвет текста для ссылок */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
