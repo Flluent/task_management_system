@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user
-  before_action :set_task, only: [:show, :edit, :update, :delete]
+  before_action :set_task, only: [ :show, :edit, :update, :delete ]
 
   def index
     @tasks = Task.all
@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     @task = Task.new()
     @task.user_id = current_user.id
     if @task.save
-      redirect_to tasks_path, notice: 'Задача успешно создана!'
+      redirect_to tasks_path, notice: "Задача успешно создана!"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path, notice: 'Задача успешно обновлена!'
+      redirect_to tasks_path, notice: "Задача успешно обновлена!"
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
   def delete
     @task.destroy
-    redirect_to tasks_path, notice: 'Задача успешно удалена!'
+    redirect_to tasks_path, notice: "Задача успешно удалена!"
   end
 
   private
