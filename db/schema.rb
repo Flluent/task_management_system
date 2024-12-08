@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_08_155822) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_08_165132) do
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -25,7 +25,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_08_155822) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password_hash"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
