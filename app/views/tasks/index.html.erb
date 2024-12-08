@@ -1,0 +1,12 @@
+<h1>Список задач</h1>
+<%= link_to 'Создать новую задачу', new_task_path %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, task %>
+      <%= link_to 'Редактировать', edit_task_path(task) %>
+      <%= link_to 'Удалить', delete_task_path(task), method: :get, data: { confirm: 'Вы уверены?' } %>
+    </li>
+  <% end %>
+</ul>
