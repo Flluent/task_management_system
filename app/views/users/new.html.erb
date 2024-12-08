@@ -1,18 +1,20 @@
 <h1>Регистрация</h1>
-<%= form_with model: @user, url: signup_path do |form| %>
-  <div>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+<%= form_with model: @user, url: signup_path, html: { class: 'registration-form' } do |form| %>
+  <div class="form-group">
+    <%= form.label :username, class: 'form-label' %>
+    <%= form.text_field :username, class: 'form-input' %>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="form-group">
+    <%= form.label :password, class: 'form-label' %>
+    <%= form.password_field :password, class: 'form-input' %>
   </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+  <div class="form-group">
+    <%= form.label :password_confirmation, class: 'form-label' %>
+    <%= form.password_field :password_confirmation, class: 'form-input' %>
   </div>
-  <%= form.submit 'Зарегистрироваться' %>
+  <%= form.submit 'Зарегистрироваться', class: 'form-submit' %>
 <% end %>
 
-<%= link_to 'Войти', login_path %>
+<div class="login-link">
+  <%= link_to 'Войти', login_path, class: 'login-text' %>
+</div>

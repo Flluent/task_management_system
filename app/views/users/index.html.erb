@@ -1,16 +1,16 @@
 <h1>Все пользователи</h1>
-<table>
+<table class="user-table">
   <thead>
   <tr>
-    <th>Имя пользователя</th>
-    <th>Дата регистрации</th>
+    <th class="table-header">Имя пользователя</th>
+    <th class="table-header">Дата регистрации</th>
   </tr>
   </thead>
   <tbody>
   <% @users.each do |user| %>
-    <tr>
-      <td><%= user.username %></td>
-      <td><%= user.created_at.strftime("%d-%m-%Y") %></td>
+    <tr class="table-row">
+      <td class="table-cell"><%= user.username %></td>
+      <td class="table-cell"><%= user.created_at.strftime("%d-%m-%Y") %></td>
     </tr>
   <% end %>
   </tbody>

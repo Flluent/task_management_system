@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new()
+    @task = Task.new(task_params)
     @task.user_id = current_user.id
     if @task.save
       redirect_to tasks_path, notice: "Задача успешно создана!"

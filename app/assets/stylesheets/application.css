@@ -10,6 +10,15 @@ h1 {
     margin-bottom: 20px;
 }
 
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -20,8 +29,7 @@ h1 {
     margin-bottom: 5px;
 }
 
-.form-input,
-.form-select {
+.form-input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -29,8 +37,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.form-input:focus,
-.form-select:focus {
+.form-input:focus {
     border-color: #66afe9;
     outline: none;
 }
@@ -106,4 +113,250 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-text {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-text:hover {
+    text-decoration: underline;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-text {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-text:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+.new-task-link {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    margin-left: 10px; /* Отступ для кнопки "Редактировать" */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 10px; /* Отступ для кнопки "Удалить" */
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title {
+    text-decoration: none;
+    color: #343a40;
+    font-weight: bold;
+}
+
+.task-title:hover {
+    text-decoration: underline;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #66afe9;
+    outline: none;
+}
+
+.form-submit {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+    background-color: #4cae4c;
+}
+
+.cancel-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+.user-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+.table-row:nth-child(even) {
+    background-color: #f2f2f2; /* Для чередования фона строк */
+}
+
+.table-row:hover {
+    background-color: #e2e6ea; /* Эффект наведения на строку */
+}
+
+.table-cell {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd; /* Граница внизу ячеек */
+    text-align: left; /* Выравнивание текста */
+}
+
+.table-cell:last-child {
+    border-bottom: none; /* Убираем границу в последней строке */
 }
