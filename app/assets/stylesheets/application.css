@@ -190,7 +190,7 @@ h1 {
 .btn-secondary {
     background-color: #6c757d;
     color: white;
-    margin-left: 10px; /* Отступ для кнопки "Редактировать" */
+    margin-left: 10px;
 }
 
 .btn-secondary:hover {
@@ -200,7 +200,7 @@ h1 {
 .btn-danger {
     background-color: #dc3545;
     color: white;
-    margin-left: 10px; /* Отступ для кнопки "Удалить" */
+    margin-left: 10px;
 }
 
 .btn-danger:hover {
@@ -344,21 +344,21 @@ h1 {
 }
 
 .table-row:nth-child(even) {
-    background-color: #f2f2f2; /* Для чередования фона строк */
+    background-color: #f2f2f2;
 }
 
 .table-row:hover {
-    background-color: #e2e6ea; /* Эффект наведения на строку */
+    background-color: #e2e6ea;
 }
 
 .table-cell {
     padding: 12px 15px;
-    border-bottom: 1px solid #ddd; /* Граница внизу ячеек */
-    text-align: left; /* Выравнивание текста */
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
 .table-cell:last-child {
-    border-bottom: none; /* Убираем границу в последней строке */
+    border-bottom: none;
 }
 
 body {
@@ -434,5 +434,91 @@ h1 {
 }
 
 .btn-link:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.new-task-link {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: #007bff;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.task-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.task-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Кнопки */
+.btn {
+    padding: 6px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.task-title {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.task-title:hover {
     text-decoration: underline;
 }

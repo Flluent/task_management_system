@@ -1,0 +1,17 @@
+<h1>Задача: <%= @task.title %></h1>
+
+<div class="task-details">
+  <p><strong>Автор:</strong> <%= @task.user.username if @task.user %></p>
+  <p><strong>Статус:</strong> <%= @task.display_status %></p>
+  <p><strong>Описание:</strong> <%= @task.description %></p>
+  <p><strong>Категория:</strong> <%= @task.category %></p>
+  <p><strong>Приоритет:</strong> <%= @task.display_priority %></p>
+  <p><strong>Создано:</strong> <%= @task.created_at.strftime("%d.%m.%Y %H:%M") %></p>
+  <p><strong>Обновлено:</strong> <%= @task.updated_at.strftime("%d.%m.%Y %H:%M") %></p>
+</div>
+
+<div class="task-actions">
+  <%= link_to 'Редактировать', edit_task_path(@task), class: 'btn btn-secondary' %>
+  <%= link_to 'Удалить', delete_task_path(@task), method: :delete, data: { confirm: 'Вы уверены, что хотите удалить эту задачу?' }, class: 'btn btn-danger' %>
+  <%= link_to 'Назад к списку задач', tasks_path, class: 'btn btn-primary' %>
+</div>
