@@ -71,25 +71,39 @@ h1 {
 }
 
 nav {
-    background-color: #f8f9fa; /* Цвет фона */
-    padding: 10px; /* Отступы */
+    background-color: #f8f9fa;
+    padding: 10px;
 }
 
 nav ul {
-    list-style-type: none; /* Убираем маркеры */
-    padding: 0; /* Убираем отступы */
+    list-style-type: none;
+    padding: 0;
 }
 
 nav li {
-    display: inline; /* Горизонтальное расположение */
-    margin-right: 15px; /* Отступы между элементами */
+    display: inline;
+    margin-right: 15px;
 }
 
 nav a {
-    text-decoration: none; /* Убираем подчеркивание */
-    color: #007bff; /* Цвет текста для ссылок */
+    text-decoration: none;
+    color: #007bff;
 }
 
 nav a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
 }
