@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    # Здесь Леша напишет код для формы для входа
+
   end
 
   def create

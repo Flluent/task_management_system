@@ -6,7 +6,9 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def show; end
+  def show
+
+  end
 
   def new
     @task = Task.new
@@ -22,7 +24,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+
+  end
 
   def update
     if @task.update(task_params)

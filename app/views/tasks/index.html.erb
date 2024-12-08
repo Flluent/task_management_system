@@ -6,7 +6,11 @@
 <ul class="task-list">
   <% @tasks.each do |task| %>
     <li class="task-item">
-      <%= link_to task.title, task, class: 'task-title' %>
+      <h2><%= link_to task.title, task, class: 'task-title' %></h2>
+      <p>Статус: <%= task.status %></p>
+      <p>Описание: <%= task.description %></p>
+      <p>Категория: <%= task.category %></p>
+      <p>Приоритет: <%= task.priority %></p>
       <div class="task-actions">
         <%= link_to 'Редактировать', edit_task_path(task), class: 'btn btn-secondary' %>
         <%= link_to 'Удалить', delete_task_path(task), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %>

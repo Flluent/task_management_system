@@ -7,6 +7,11 @@ Rails.application.routes.draw do
 
   root "tasks#index"
 
+  get "/tasks/new", to: "tasks#new"
+  get "/tasks/:id", to: "tasks#show"
+  get "/tasks/:id/edit", to: "tasks#edit"
+  patch "/tasks/:id", to: "tasks#update"
+
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
 

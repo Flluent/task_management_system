@@ -1,0 +1,29 @@
+<h1>Редактирование задачи</h1>
+
+<%= form_with model: @task, html: { class: 'task-form' } do |form| %>
+  <div class="form-group">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-input' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description, class: 'form-label' %>
+    <%= form.text_area :description, class: 'form-input', rows: 5 %>
+  </div>
+  <div class="form-group">
+    <%= form.label :status, class: 'form-label' %>
+    <%= form.select :status, [['Бэклог', 'backlog'], ['В фокусе', 'current_focus'], ['В процессе', 'in_progress'], ['Завершено', 'completed']], {}, class: 'form-select' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :category, class: 'form-label' %>
+    <%= form.text_field :category, class: 'form-input' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :priority, class: 'form-label' %>
+    <%= form.select :priority, [['Низкий', 'low'], ['Средний', 'medium'], ['Высокий', 'high']], {}, class: 'form-select' %>
+  </div>
+  <%= form.submit 'Сохранить изменения', class: 'form-submit' %>
+<% end %>
+
+<div class="cancel-link">
+  <%= link_to 'Отменить', tasks_path, class: 'btn btn-link' %>
+</div>
