@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     sort_column = valid_sort_columns.include?(params[:sort]) ? params[:sort] : "created_at"
     sort_direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 
-    if sort_column == 'editable'
+    if sort_column == "editable"
       # Преобразуем boolean в строку для сортировки
       @tasks = @tasks.order(Arel.sql("CASE WHEN editable THEN 'Да' ELSE 'Нет' END #{sort_direction}"))
     else
