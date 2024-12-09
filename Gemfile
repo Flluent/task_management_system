@@ -32,6 +32,8 @@ gem "bcrypt"
 
 gem "kaminari"
 
+gem 'pg'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
