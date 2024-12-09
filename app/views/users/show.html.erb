@@ -4,32 +4,37 @@
   <p class="registration-date">Дата регистрации: <%= @user.created_at.strftime("%d-%m-%Y") %></p>
 
   <h2>Созданные задачи</h2>
-  <table class="task-table">
-    <thead>
-    <tr>
-      <th>Заголовок</th>
-      <th>Статус</th>
-      <th>Описание</th>
-      <th>Категория</th>
-      <th>Приоритет</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @tasks.each do |task| %>
+  <% if @tasks.count > 0 %>
+    <table class="task-table">
+      <thead>
       <tr>
-        <td><%= link_to task.title, task_path(task) %></td>
-        <td><%= task.display_status %></td>
-        <td><%= task.description %></td>
-        <td><%= task.category %></td>
-        <td><%= task.display_priority %></td>
+        <th>Заголовок</th>
+        <th>Статус</th>
+        <th>Описание</th>
+        <th>Категория</th>
+        <th>Приоритет</th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= link_to task.title, task_path(task) %></td>
+          <td><%= task.display_status %></td>
+          <td><%= task.description %></td>
+          <td><%= task.category %></td>
+          <td><%= task.display_priority %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-  <div class="pagination">
-    <%= paginate @tasks %>
-  </div>
+    <div class="pagination">
+      <%= paginate @tasks %>
+    </div>
+  <% else %>
+    <p>У пользователя нет созданных задач</p>
+  <% end %>
+
 
   <div class="back-link">
     <%= link_to 'Назад к списку пользователей', users_path, class: 'btn btn-secondary' %>

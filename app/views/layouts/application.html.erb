@@ -21,7 +21,7 @@
 <body>
 <nav>
   <ul>
-    <li><%= link_to 'Главная', root_path %></li>
+    <li><%= link_to 'Задачи', root_path %></li>
     <% if current_user %>
       <li><%= link_to 'Пользователи', users_path %></li>
       <li><%= link_to 'Выход', logout_path, method: :delete, data: { confirm: 'Вы уверены, что хотите выйти?' } %></li>

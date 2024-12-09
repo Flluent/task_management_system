@@ -20,6 +20,10 @@
     <%= form.label :priority, class: 'form-label' %>
     <%= form.select :priority, [['Низкий', 'low'], ['Средний', 'medium'], ['Высокий', 'high']], {}, class: 'form-select' %>
   </div>
+  <div class="form-group">
+    <%= form.check_box :editable %>
+    <%= form.label :editable, "Разрешить другим пользователям редактировать и удалять эту задачу", class: 'form-label-inline' %>
+  </div>
   <%= form.submit 'Создать задачу', class: 'form-submit' %>
 <% end %>
 

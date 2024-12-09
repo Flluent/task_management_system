@@ -42,6 +42,12 @@
         <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
       <% end %>
     </th>
+    <th>
+      <%= link_to 'Изменяемость', tasks_path(sort: 'editable', direction: sort_direction('editable')), style: 'color: white;' %>
+      <% if params[:sort] == 'editable' %>
+        <span><%= params[:direction] == 'asc' ? '↑' : '↓' %></span>
+      <% end %>
+    </th>
     <th>Действия</th>
   </tr>
   </thead>
@@ -54,12 +60,21 @@
       <td class="description"><%= task.description %></td>
       <td class="category"><%= task.category %></td>
       <td class="priority"><%= task.display_priority %></td>
-      <td>
-        <div class="task-actions">
-          <%= link_to 'Редактировать', edit_task_path(task), class: 'btn btn-secondary' %>
-          <%= link_to 'Удалить', delete_task_path(task), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %>
-        </div>
-      </td>
+      <td><%= task.editable ? "Да" : "Нет" %></td>
+      <% if task.editable || task.user_id == current_user.id %>
+        <td>
+          <div class="task-actions">
+            <%= link_to 'Редактировать', edit_task_path(task), class: 'btn btn-secondary' %>
+            <%= link_to 'Удалить', delete_task_path(task), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %>
+          </div>
+        </td>
+      <% else %>
+        <td>
+          <div class="task-actions">
+            Нет доступных действий
+          </div>
+        </td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

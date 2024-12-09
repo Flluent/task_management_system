@@ -6,15 +6,21 @@ class TasksController < ApplicationController
     @tasks = Task.all
 
     # Сортировка по параметрам с безопасной белым списком
-    valid_sort_columns = %w[title user_id status description category priority]
+    valid_sort_columns = %w[title user_id status description category priority editable]
     sort_column = valid_sort_columns.include?(params[:sort]) ? params[:sort] : "created_at"
     sort_direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 
-    @tasks = @tasks.order(sort_column => sort_direction)
+    if sort_column == 'editable'
+      # Преобразуем boolean в строку для сортировки
+      @tasks = @tasks.order(Arel.sql("CASE WHEN editable THEN 'Да' ELSE 'Нет' END #{sort_direction}"))
+    else
+      @tasks = @tasks.order(sort_column => sort_direction)
+    end
 
     # Пагинация
     @tasks = @tasks.page(params[:page]).per(6)
   end
+
 
   def show
   end
@@ -65,6 +71,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :status, :category, :priority)
+    params.require(:task).permit(:title, :description, :status, :category, :priority, :editable)
   end
 end
