@@ -524,6 +524,15 @@ body {
     text-decoration: none;
 }
 
+.user-avatar {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
 .task-title:hover {
     text-decoration: underline;
 }
@@ -542,4 +551,57 @@ body {
 .task-table td:nth-child(4),
 .task-table td:nth-child(5) {
     max-width: 100px;
+}
+
+.user-profile {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.registration-date {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.task-table th, .task-table td {
+    padding: 12px;
+}
+
+.task-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.task-table tr:hover {
+    background-color: #e2e6ea;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.back-link {
+    text-align: center;
 }
