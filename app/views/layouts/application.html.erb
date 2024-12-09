@@ -25,6 +25,9 @@
     <% if current_user %>
       <li><%= link_to 'Пользователи', users_path %></li>
       <li><%= link_to 'Выход', logout_path, method: :delete, data: { confirm: 'Вы уверены, что хотите выйти?' } %></li>
+      <li class="user-info">
+        <span class="user-name">Текущий пользователь: <%= current_user.username %></span>
+      </li>
     <% else %>
       <li><%= link_to 'Вход', login_path %></li>
       <li><%= link_to 'Регистрация', signup_path %></li>
@@ -34,5 +37,6 @@
 
 <%= render 'shared/flash' %>
 <%= yield %>
+
 </body>
 </html>

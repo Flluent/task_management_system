@@ -605,3 +605,15 @@ body {
 .back-link {
     text-align: center;
 }
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+}

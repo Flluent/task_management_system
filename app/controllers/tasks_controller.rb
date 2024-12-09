@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user
   before_action :set_task, only: [ :show, :edit, :update, :delete ]
+  before_action :check_root, only: [ :edit, :update, :delete ]
 
   def index
     @tasks = Task.all
@@ -68,6 +69,11 @@ class TasksController < ApplicationController
     else
       "asc"
     end
+  end
+
+  def check_root
+    flash[:alert] = "Недостаточно прав для действия"
+    redirect_to tasks_path if !@task.editable && @task.user_id != current_user.id
   end
 
   def task_params
