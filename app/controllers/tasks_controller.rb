@@ -72,11 +72,14 @@ class TasksController < ApplicationController
   end
 
   def check_root
-    flash[:alert] = "Недостаточно прав для действия"
-    redirect_to tasks_path if !@task.editable && @task.user_id != current_user.id
+    if !@task.editable && @task.user_id != current_user.id
+      flash[:alert] = "Недостаточно прав для действия"
+      redirect_to tasks_path
+    end
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :status, :category, :priority, :editable)
+    params.require(:task).permit(:title, :description, :status, :category,
+                                 :priority, :editable, :assignee_id)
   end
 end

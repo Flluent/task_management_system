@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_09_193217) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_09_201112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -24,6 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_193217) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "editable"
+    t.integer "assignee_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
